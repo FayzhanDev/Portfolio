@@ -39,8 +39,8 @@ video {
     left: 45%;
     transform: translateY(-50%) perspective(600px) rotateX(10deg);
     list-style: none;
-    padding: 5;
-    margin: 10;
+    padding: 0;
+    margin: 0;
     z-index: 1;
     transition: opacity 0.5s ease;
     height: 480px;
@@ -68,20 +68,18 @@ video {
         transform-origin: left center;
     }
 
-        /* Item actif : légèrement mis en avant en permanence */
         #menu li.actif {
             color: #00dcff;
             text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
         }
 
-        /* Survol : c'est ici que se joue l'effet "façon Persona" -> grossissement net */
         #menu li:hover {
             font-size: calc(var(--fs, 50px) + 25px);
             color: #000000;
             transform: skewX(-5deg) rotate(var(--rot, 0deg)) translateX(calc(var(--tx, 0px) + 15px));
         }
 
-  #menu li:nth-child(1) {
+#menu li:nth-child(1) {
     --tx: 0px;
     --ty: 0px;
     --rot: 16deg;
@@ -128,6 +126,140 @@ video {
             text-decoration: none;
         }
 
+/* === SECTION STAGE (ANNEE 1 / ANNEE 2 -> MISSION 1 / MISSION 2) === */
+#stages {
+    position: fixed;
+    top: 50%;
+    right: 15%;
+    left: auto;
+    transform: translateY(-50%) skewX(-5deg);
+    width: 650px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-family: 'Anton', sans-serif;
+    color: rgba(0, 220, 255, 0.85);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+    padding: 30px 35px;
+    border: 2px solid rgba(0, 220, 255, 0.4);
+    background: rgba(0, 10, 40, 0.5);
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.3), inset 0 0 15px rgba(0, 200, 255, 0.1);
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+}
+
+    #stages::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    #stages::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    #stages::-webkit-scrollbar-thumb {
+        background: rgba(0, 220, 255, 0.4);
+        border-radius: 2px;
+    }
+
+    #stages::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 220, 255, 0.7);
+    }
+
+    #stages.cache {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Liste des grands onglets ANNEE 1 / ANNEE 2 */
+    #stages-annees {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        #stages-annees.cache {
+            display: none;
+        }
+
+        #stages-annees li {
+            font-size: 45px;
+            letter-spacing: 3px;
+            text-align: center;
+            margin: 25px 0;
+            cursor: pointer;
+            color: rgba(0, 220, 255, 0.85);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+            #stages-annees li:hover {
+                color: #000000;
+                transform: scale(1.08);
+            }
+
+    /* Liste des missions, affichee apres clic sur une annee */
+    .stages-missions {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+        .stages-missions.actif {
+            display: block;
+        }
+
+        .stages-missions li {
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-align: left;
+            margin: 0 0 35px 0;
+            line-height: 1.5;
+            cursor: default;
+            color: rgba(0, 220, 255, 0.85);
+        }
+
+        .stages-missions li strong {
+            display: block;
+            font-size: 30px;
+            letter-spacing: 2px;
+            color: #00dcff;
+            margin-bottom: 14px;
+            text-align: center;
+            cursor: default;
+        }
+
+        .stages-missions li p {
+            margin: 0 0 10px 0;
+        }
+
+        .stages-missions li p.mission-sous-titre {
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #00dcff;
+            margin-bottom: 4px;
+            margin-top: 16px;
+            text-transform: uppercase;
+        }
+
+    /* Bouton retour interne (annee -> liste des annees) */
+    #stages-retour-annees {
+        text-align: center;
+        font-size: 26px;
+        letter-spacing: 2px;
+        margin-top: 20px;
+        cursor: pointer;
+        color: rgba(0, 220, 255, 0.6);
+        display: none;
+    }
+
+        #stages-retour-annees.actif {
+            display: block;
+        }
+
+        #stages-retour-annees:hover {
+            color: #00dcff;
+        }
+
 #presentation {
     position: fixed;
     top: 50%;
@@ -167,7 +299,6 @@ video {
     }
 
 /* === TRIANGLE FACON PERSONA 5 === */
-/* Blanc avec contour magenta/rose, pointe nette derriere le texte survole */
 #triangle {
     position: fixed;
     background: linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.97) 80%, rgba(255, 40, 130, 0.9) 100%);
