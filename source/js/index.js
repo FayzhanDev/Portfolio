@@ -60,6 +60,13 @@ function initMenu() {
                 return;
             }
 
+            if (texte === 'AP') {
+                if (typeof window.ouvrirStages === 'function') {
+                    window.ouvrirStages();
+                }
+                return;
+            }
+
             if (texte === 'CONTACT') {
                 menu.classList.add('cache');
                 presentation.classList.add('cache');
@@ -79,6 +86,9 @@ function initMenu() {
     btnRetour.addEventListener('click', () => {
         contact.classList.add('cache');
         presentation.classList.add('cache');
+        if (typeof window.fermerStages === 'function') {
+            window.fermerStages();
+        }
         btnRetour.classList.add('cache');
         menu.classList.remove('cache');
         triangle.style.opacity = '0'; // le MutationObserver le remettra au bon moment
@@ -162,7 +172,68 @@ function initTriangle() {
     observer.observe(contact, { attributes: true });
 }
 
+function initStages() {
+    const menu = document.getElementById('menu');
+    const btnRetour = document.getElementById('retour');
+    const presentation = document.getElementById('presentation');
+    const contact = document.getElementById('contact');
+    const triangle = document.getElementById('triangle');
+    const stages = document.getElementById('stages');
+    const stagesAnnees = document.getElementById('stages-annees');
+    const stagesRetourAnnees = document.getElementById('stages-retour-annees');
+
+    if (!stages) return; // securite si la section n'existe pas dans le HTML
+
+    const missions = {
+        '1': document.getElementById('stages-annee-1'),
+        '2': document.getElementById('stages-annee-2')
+    };
+
+    function afficherListeAnnees() {
+        stagesAnnees.classList.remove('cache');
+        Object.values(missions).forEach(m => m.classList.remove('actif'));
+        stagesRetourAnnees.classList.remove('actif');
+    }
+
+    function afficherMissions(annee) {
+        stagesAnnees.classList.add('cache');
+        Object.values(missions).forEach(m => m.classList.remove('actif'));
+        if (missions[annee]) missions[annee].classList.add('actif');
+        stagesRetourAnnees.classList.add('actif');
+    }
+
+    // Clic sur ANNEE 1 / ANNEE 2
+    stagesAnnees.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', () => {
+            const annee = item.getAttribute('data-annee');
+            afficherMissions(annee);
+        });
+    });
+
+    // Retour de la vue mission vers la liste des annees (sans quitter la section stages)
+    stagesRetourAnnees.addEventListener('click', () => {
+        afficherListeAnnees();
+    });
+
+    // Ouverture de la section stages depuis le menu (item "AP")
+    window.ouvrirStages = function () {
+        menu.classList.add('cache');
+        presentation.classList.add('cache');
+        contact.classList.add('cache');
+        triangle.style.opacity = '0';
+        afficherListeAnnees();
+        stages.classList.remove('cache');
+        btnRetour.classList.remove('cache');
+    };
+
+    // Fermeture de la section stages quand on appuie sur RETOUR (le bouton global)
+    window.fermerStages = function () {
+        stages.classList.add('cache');
+    };
+}
+
 initVideo();
 initVideoPlaylist();
 initMenu();
 initTriangle();
+initStages();
