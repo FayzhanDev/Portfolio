@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -7,14 +6,11 @@
     <link href="../css/index.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"/>
 </head>
-
 <body>
     <video autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" controlsList="nodownload nofullscreen noremoteplayback">
         <source src="../../assets/image/boucle.mp4" type="video/mp4"></source>
     </video>
-
     <h1 id="titre">PORTFOLIO</h1>
-
     <div id="presentation" class="cache">
         <p>
             Bonjour, je suis Gaëtan Demoy, étudiant en BTS SIO.<br>
@@ -25,7 +21,6 @@
              <a href="../../assets/image/CV professionnel gris simple.pdf">Mon CV</a>
         </p>
     </div>
-
     <ul id="menu" class="cache">
         <li class="actif">A PROPOS DE MOI</li>
         <li>STAGE</li>
@@ -35,18 +30,64 @@
         <li><a href="../../assets/image/Tableau de synthèse Épreuve E5.pdf">TABLEAU DE COMPETENCES</a></li>
         <li>CONTACT</li>
     </ul>
-
     <ul id="contact" class="cache">
         <li><a href="https://fr.linkedin.com/in/gaetan-demoy-8954bb392">LINKEDIN</a></li>
         <li>NUMERO: 0652277653</li>
         <li><a href="https://github.com/FayzhanDev">GITHUB</a></li>
         <li>MAIL: GAETAN.DEMOY@BTS-MALRAUX.NET</li>
     </ul>
+    <div id="stages" class="cache">
+        <ul id="stages-annees">
+            <li data-annee="1">ANNÉE 1</li>
+            <li data-annee="2">ANNÉE 2</li>
+        </ul>
 
+        <ul id="stages-annee-1" class="stages-missions">
+            <li>
+                <strong>MISSION 1 — Déploiement de GLPI sur Windows Server (M2L.LOC)</strong>
+                <p class="mission-sous-titre">Contexte</p>
+                <p>Dans le cadre d'un projet de BTS SIO réalisé en binôme, nous devions installer et configurer de zéro un outil de gestion de parc informatique et de helpdesk (GLPI) sur un serveur Windows Server, accessible via le nom de domaine interne M2L.LOC.</p>
+
+                <p class="mission-sous-titre">Démarche</p>
+                <p>Installation des prérequis (IIS, PHP, MySQL/MariaDB), téléchargement et déploiement de GLPI sur le serveur, configuration de la base de données et du DNS interne pour l'accès via M2L.LOC, puis paramétrage de l'application : création des comptes utilisateurs, intégration du parc matériel et mise en place du système de tickets.</p>
+
+                <p class="mission-sous-titre">Résultats / Livrables</p>
+                <p>Un serveur GLPI pleinement fonctionnel et accessible en interne, accompagné d'une documentation détaillant la procédure d'installation ainsi que des captures d'écran de la configuration finale.</p>
+
+                <p class="mission-sous-titre">Compétences mobilisées</p>
+                <p>Administrer les accès et les services applicatifs, déployer et exploiter un service, mettre en production une solution applicative, travailler en mode collaboratif (binôme).</p>
+            </li>
+          <li>
+    <strong>MISSION 2 — Développement d'un site web avec base de données</strong>
+    <p class="mission-sous-titre">Contexte</p>
+    <p>Dans le cadre d'un projet imposé par notre professeur, réalisé en binôme, nous devions concevoir et développer un site web dynamique intégrant une base de données.</p>
+
+    <p class="mission-sous-titre">Démarche</p>
+    <p>Conception et développement d'un site en HTML/CSS et PHP, avec mise en place d'une base de données SQL. Le site intègre un système de gestion d'utilisateurs (inscription/connexion), un catalogue de produits, ainsi qu'un CRUD complet permettant l'ajout, la modification et la suppression de données.</p>
+
+    <p class="mission-sous-titre">Résultats / Livrables</p>
+    <p>Un site web fonctionnel en ligne accompagné d'un rapport / compte-rendu détaillant les choix techniques et la procédure de développement.</p>
+
+    <p class="mission-sous-titre">Compétences mobilisées</p>
+    <p>Gérer une base de données, travailler en mode collaboratif (binôme).</p>
+</li>
+        </ul>
+
+        <ul id="stages-annee-2" class="stages-missions">
+            <li>
+                <strong>MISSION 1</strong>
+                Texte de présentation de la mission 1 de l'année 2.
+            </li>
+            <li>
+                <strong>MISSION 2</strong>
+                Texte de présentation de la mission 2 de l'année 2.
+            </li>
+        </ul>
+
+        <div id="stages-retour-annees">RETOUR AUX ANNÉES</div>
+    </div>
     <div id="retour" class="cache">RETOUR</div>
-
     <div id="triangle"></div>
-
     <script src="../js/index.js"></script>
 </body>
-</html></html>
+</html>
