@@ -127,7 +127,8 @@ video {
         }
 
 /* === SECTION STAGE (ANNEE 1 / ANNEE 2 -> MISSION 1 / MISSION 2) === */
-#stages {
+#stages,
+#stages2 {
     position: fixed;
     top: 50%;
     right: 15%;
@@ -148,40 +149,48 @@ video {
     box-sizing: border-box;
 }
 
-    #stages::-webkit-scrollbar {
+    #stages::-webkit-scrollbar,
+    #stages2::-webkit-scrollbar {
         width: 4px;
     }
 
-    #stages::-webkit-scrollbar-track {
+    #stages::-webkit-scrollbar-track,
+    #stages2::-webkit-scrollbar-track {
         background: transparent;
     }
 
-    #stages::-webkit-scrollbar-thumb {
+    #stages::-webkit-scrollbar-thumb,
+    #stages2::-webkit-scrollbar-thumb {
         background: rgba(0, 220, 255, 0.4);
         border-radius: 2px;
     }
 
-    #stages::-webkit-scrollbar-thumb:hover {
+    #stages::-webkit-scrollbar-thumb:hover,
+    #stages2::-webkit-scrollbar-thumb:hover {
         background: rgba(0, 220, 255, 0.7);
     }
 
-    #stages.cache {
+    #stages.cache,
+    #stages2.cache {
         opacity: 0;
         pointer-events: none;
     }
 
     /* Liste des grands onglets ANNEE 1 / ANNEE 2 */
-    #stages-annees {
+    #stages-annees,
+    #stages2-annees {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
-        #stages-annees.cache {
+        #stages-annees.cache,
+        #stages2-annees.cache {
             display: none;
         }
 
-        #stages-annees li {
+        #stages-annees li,
+        #stages2-annees li {
             font-size: 45px;
             letter-spacing: 3px;
             text-align: center;
@@ -191,7 +200,8 @@ video {
             transition: color 0.2s ease, transform 0.2s ease;
         }
 
-            #stages-annees li:hover {
+            #stages-annees li:hover,
+            #stages2-annees li:hover {
                 color: #000000;
                 transform: scale(1.08);
             }
@@ -242,7 +252,8 @@ video {
         }
 
     /* Bouton retour interne (annee -> liste des annees) */
-    #stages-retour-annees {
+    #stages-retour-annees,
+    #stages2-retour-annees {
         text-align: center;
         font-size: 26px;
         letter-spacing: 2px;
@@ -252,11 +263,13 @@ video {
         display: none;
     }
 
-        #stages-retour-annees.actif {
+        #stages-retour-annees.actif,
+        #stages2-retour-annees.actif {
             display: block;
         }
 
-        #stages-retour-annees:hover {
+        #stages-retour-annees:hover,
+        #stages2-retour-annees:hover {
             color: #00dcff;
         }
 
