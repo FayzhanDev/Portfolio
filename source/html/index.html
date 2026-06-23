@@ -180,7 +180,7 @@
 
         <ul id="stages2-annee-1" class="stages-missions">
  <li class="mission-introduction">
-                <strong>PORTFOLIO DE STAGE</strong>
+                <strong>STAGE: MARCHE YAYLA</strong>
                 <p class="mission-contexte-general">
                     Marché Yayla est un commerce alimentaire spécialisé dans les produits turcs, orientaux et balkans, situé au 5 Rue Louison Bobet à Garges-lès-Gonesse (Val-d'Oise). Ouvert 7 jours sur 7, il propose épicerie orientale, fruits et légumes frais, boulangerie artisanale et boucherie halal.
                 </p>
@@ -222,6 +222,51 @@
             </li>
 
             <hr class="separation-mission">
+
+<li class="mission-etapes">
+    <strong>LES CONTRAINTES</strong>
+
+    <p class="mission-sous-titre">Techniques</p>
+    <p>• Aucune infrastructure existante : tout était à créer<br>
+       • Compatibilité mobile obligatoire (la clientèle consulte principalement depuis smartphone)<br>
+       • Sécurisation des accès sans recours à un prestataire externe
+    </p>
+
+    <p class="mission-sous-titre">Économiques</p>
+    <p>• Budget nul : uniquement des technologies open source gratuites<br>
+    </p>
+
+    <p class="mission-sous-titre">Humaines</p>
+    <p>• Gérant non technicien : l'interface d'administration devait être utilisable sans aucune connaissance technique<br>
+       • Travail en totale autonomie, sans équipe ni référent sur place<br>
+    </p>
+</li>
+
+<hr class="separation-mission">
+
+<li class="mission-etapes">
+    <strong>RECHERCHE DE SOLUTIONS</strong>
+
+    <p class="mission-sous-titre">Base de données</p>
+    <p>• <strong>MySQL retenu</strong> face à SQLite : MySQL gère mieux les accès simultanés (plusieurs clients sur le site en même temps), ce que SQLite ne supporte pas bien dans un contexte web<br>
+       • MySQL est également natif sur le serveur du BTS, ce qui simplifiait le déploiement
+    </p>
+
+    <p class="mission-sous-titre">Langage Back-End</p>
+    <p>• <strong>PHP retenu</strong> sans hésitation : déjà maîtrisé en cours, compatible nativement avec l'hébergement disponible, et parfaitement adapté à un projet de cette taille<br>
+       • Pas besoin de configuration serveur supplémentaire
+    </p>
+
+    <p class="mission-sous-titre">Front-End</p>
+    <p>• <strong>PHP/HTML / CSS + Bootstrap 5 retenus</strong> : déjà utilisé en cours, Bootstrap permettait d'obtenir un design responsive rapidement sans réécrire toute la mise en page mobile<br>
+       • JavaScript vanille pour les interactions (filtres en temps réel, carrousel)
+    </p>
+
+    <p class="mission-sous-titre">Hébergement</p>
+    <p>• <strong>Serveur pédagogique BTS Malraux</strong> utilisé pour le développement et la démonstration finale<br>
+       • Déploiement des fichiers via FTP
+    </p>
+</li>
             
             <li class="mission-etapes">
                 <strong>BILAN</strong>
